@@ -1,6 +1,6 @@
-package exmpls;
+package exmpls.initialization;
 
-public class Initialization {
+public class InitializationBlock {
     public static void main(String[] args) {
         A a1 = new A(333);
         A a2 = new A();
