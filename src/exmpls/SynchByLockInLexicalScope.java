@@ -1,4 +1,4 @@
-package exp;
+package exmpls;
 
 public class SynchByLockInLexicalScope {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package exp;
+package exmpls;
 
 public class Closure {
     int x;
@@ -21,9 +21,9 @@ public class Closure {
         }
     }
 
-    void doA(A a) {}
+    void doA(X a) {}
 }
 
-interface A {
+interface X {
     void doWork();
 }
