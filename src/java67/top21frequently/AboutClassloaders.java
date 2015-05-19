@@ -9,6 +9,11 @@ public class AboutClassloaders {
         System.out.println(ConcurrentHashMap.class.getClassLoader());
         System.out.println(AboutClassloaders.class.getClassLoader().getClass().getClassLoader());
         // AppClassLoader
-        System.out.println(AboutClassloaders.class.getClassLoader());
+        ClassLoader appClassLoader = AboutClassloaders.class.getClassLoader();
+        System.out.println(appClassLoader);
+        // Extension class loader
+        System.out.println(appClassLoader.getParent());
+        // null
+        System.out.println(appClassLoader.getParent().getParent());
     }
 }
