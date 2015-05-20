@@ -13,5 +13,7 @@ public class StringImmutablePool {
         asd1 = "asd";
         asd2 = "asd";
         System.out.println(asd1 == asd2);
+
+        System.out.println("abc" == new String("abc").intern());
     }
 }
