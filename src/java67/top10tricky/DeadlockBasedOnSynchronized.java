@@ -1,6 +1,6 @@
 package java67.top10tricky;
 
-public class Deadlock {
+public class DeadlockBasedOnSynchronized {
     public static void main(String[] args) {
         Thread t1 = new Thread(() -> {
             while (true) {
