@@ -1,6 +1,6 @@
 package exmpls;
 
-public class AnonymousClassBasedOnClassInstedOfInterface {
+public class AnonymousClassBasedOnClassInsteadOfInterface {
     public static void main(String[] args) {
         Object o = new Object() {
             {
@@ -22,5 +22,9 @@ public class AnonymousClassBasedOnClassInstedOfInterface {
         };
 
         System.out.println(o);
+        System.out.println(o.getClass());
+        // always true
+        System.out.println(Object.class.isAssignableFrom(o.getClass()));
+        System.out.println(o instanceof Object);
     }
 }
