@@ -9,11 +9,11 @@ public class LambdaSample {
         si.doSomeTwo();
     }
 
-    public LambdaSample(SomeLamdaIterface sli) {
+    public LambdaSample(SomeLambdaInterface sli) {
         sli.doSome(22);
     }
 
-//    public LambdaSample(SomeLamdaIterface2 sli2) {
+//    public LambdaSample(SomeLambdaInterface2 sli2) {
 //        sli2.doSome(22);
 //    }
 
@@ -27,7 +27,7 @@ public class LambdaSample {
 
 
         LambdaSample lambdaSample1 = new LambdaSample(x -> {
-
+            System.out.println(x);
         });
 
         LambdaSample lambdaSample2 = new LambdaSample(System.out::print);
@@ -39,10 +39,14 @@ interface SomeInterface {
     void doSomeTwo();
 }
 
-interface SomeLamdaIterface {
+interface SomeLambdaInterface {
     void doSome(int x);
 }
 
-interface SomeLamdaIterface2 {
+interface SomeLambdaInterface2 {
     void doSome(int x);
+
+    default void doSomeTwo(int x) {
+
+    }
 }
