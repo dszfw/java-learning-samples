@@ -1,4 +1,4 @@
-package effectivejava.chapter2.item2;
+package effectivejava.item2;
 
 public class SubclassedFromClassWithPrivateConstructor {
 //    private SubclassedFromClassWithPrivateConstructor() {}
