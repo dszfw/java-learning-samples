@@ -14,6 +14,7 @@ public class StaticVsNonStaticInnerClasses {
     }
 
     static class C {
+        public static int i = 42;
         public void showVar() {
             // cannot be referenced from static context
 //            System.out.println(var);
@@ -21,6 +22,7 @@ public class StaticVsNonStaticInnerClasses {
     }
 
     class X {
+//        public static int i = 42;
         void showVar() {
             System.out.println(StaticVsNonStaticInnerClasses.this.var);
         }

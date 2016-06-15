@@ -9,6 +9,9 @@ public class AnonymousClasses {
     // static context
     {
         Object someObject = new Object() {
+
+//            public static int i = 42;
+
             @Override
             public String toString() {
                 return "nothing" + CONSTANT;
