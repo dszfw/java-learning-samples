@@ -14,6 +14,7 @@ public class GenericMethods {
         System.out.println();
     }
 
+    // TODO
     public static <T extends Comparable<Money>> T max(List<T> list) {
         Iterator<T> i = list.iterator();
         T result = i.next();

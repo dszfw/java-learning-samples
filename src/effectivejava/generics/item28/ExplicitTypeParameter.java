@@ -14,6 +14,7 @@ public class ExplicitTypeParameter {
         // do what you want them to. Luckily there is a way to deal with this
         // sort of error. If the compiler doesn’t infer the type that you wish
         // it had, you can tell it what type to use with an explicit type parameter
+
         // ExplicitTypeParameter.<Number>union(integers, doubles)
         Set<Number> numbers = union(integers, doubles);
     }
