@@ -1,3 +1,4 @@
+/*
 package effectivejava.generics.item27;
 
 import java.util.*;
@@ -77,4 +78,4 @@ final class Money implements Comparable<? extends Comparable<Money>> {
         return amount;
     }
 
-}
+}*/
