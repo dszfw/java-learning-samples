@@ -14,19 +14,25 @@ public class BoundedWildcardsPECS {
         objectList.add(42);
     }
 
-    // covariant usage
-    static void genericBoundedUsage() {
-        // TODO
+    static void genericCovariantUsage() {
+        List<? extends Object> objects = new ArrayList<>();
+        List<String> strings = new ArrayList<>();
+        objects = strings;
+        // won't compile
+//        objectList.add(42);
+    }
+
+    static void genericBoundedWildcardUsage() {
         List<Object> listObjects = new ArrayList<>();
         listObjects.add(new Object());
         listObjects.add(Integer.valueOf(42));
 
-        List<? super String> listObjects2 = new ArrayList<>();
-        listObjects2.add(new Object());
+        List<? super String> listObjects2 = new ArrayList<Object>();
+        // won't compile
+//        listObjects2.add(new Object());
+        // we can add only String instance
         listObjects2.add("123412");
         Object o = listObjects2.get(0);
-        listObjects2 = new ArrayList<Object>();
-
     }
 
     // PECS - producer - extends, consumer - super
