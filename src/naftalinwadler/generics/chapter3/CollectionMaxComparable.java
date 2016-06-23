@@ -5,7 +5,7 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 
-public class ComparableCollectionMax {
+public class CollectionMaxComparable {
 
     public static void main(String[] args) {
         List<Orange> oranges = Arrays.asList(new Orange(), new Orange());
