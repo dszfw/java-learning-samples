@@ -25,6 +25,7 @@ public class StaticVsNonStaticInnerClasses {
 //        public static int i = 42;
         void showVar() {
             System.out.println(StaticVsNonStaticInnerClasses.this.var);
+            System.out.println(var);
         }
     }
 }
