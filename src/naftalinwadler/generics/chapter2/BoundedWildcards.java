@@ -12,19 +12,26 @@ a wildcard when you both get and put.
 public class BoundedWildcards {
     static void extendsUsage() {
         List<? extends Number> numbers = Arrays.<Double>asList(3.14, 2.718);
+
+        // subtyping
+        numbers = new ArrayList<Double>();
+
         // can't compile
 //        numbers.add(42);
+        // only null is allowed
         numbers.add(null);
         // In general, if a structure contains elements with a
         // type of the form ? extends E , we can get elements
         // out of the structure, but we cannot put elements into the structure.
-
-        // subtyping
-        numbers = new ArrayList<Double>();
+        Number number = numbers.get(0);
     }
 
     static void superUsage() {
         List<? super Number> list = Arrays.asList(42, 2.718);
+
+        // supertyping
+        list = new ArrayList<Object>();
+
         // Double
         list.add(3.14);
         // Integer
@@ -55,8 +62,5 @@ public class BoundedWildcards {
 //        list.add(new Object());
 
         Object obj = list.get(0);
-
-        // supertyping
-        list = new ArrayList<Object>();
     }
 }
