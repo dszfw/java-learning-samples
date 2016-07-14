@@ -9,19 +9,21 @@ public class UnboundedWildcard {
         List<String> stringList = new ArrayList<>();
         stringList.add("ssss");
 
-        List<?> wildcardList = new ArrayList<>(Arrays.asList("one", "two"));
-        // we can't add any element to wildcardList except null
-//         wildcardList.add("sss");
-        // wildcardList.add(123);
-        // wildcardList.add(true);
-        wildcardList.add(null);
-        Object o = wildcardList.get(0);
-        System.out.println(wildcardList.size());
+        List<?> unboundedWildcardList = Arrays.asList("one", "two");
+        // we can't add any element to unboundedWildcardList except null
+//         unboundedWildcardList.add("sss");
+        // unboundedWildcardList.add(123);
+        // unboundedWildcardList.add(true);
+        unboundedWildcardList.add(null);
+        Object o = unboundedWildcardList.get(0);
+        System.out.println(unboundedWildcardList.size());
 
         Www<String> stringWww = new Www<>("123");
         stringWww.showW("ololo");
         Www<?> www = stringWww;
+        // put
 //        www.showW("1321");
+        // get
         Object w = www.getW();
         System.out.println(w);
         System.out.println(w instanceof String);
