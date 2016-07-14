@@ -20,16 +20,16 @@ public class GenericsNotReifiable {
 //        System.out.println(bounded instanceof List<? super String>);
     }
 
-    // unchecked
-    public static <T> void doSomeUnchecked(Object collection) {
-        if (collection instanceof List<?>) {
-            List<T> list = (List<T>)collection;
+    public static <T> void uncheckedCasting(Object obj) {
+        if (obj instanceof List<?>) {
+            // unchecked
+            List<T> list = (List<T>) obj;
         }
     }
 
-    public static <T> void doSome(Collection<T> collection) {
+    public static <T> void checkedCasting(Collection<T> collection) {
         if (collection instanceof List<?>) {
-            List<T> list = (List<T>)collection;
+            List<T> list = (List<T>) collection;
         }
     }
 }

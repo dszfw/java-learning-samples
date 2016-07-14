@@ -22,10 +22,11 @@ public class Unchecked {
         // unchecked cast
         List<String> stringList = (List<String>)(List<?>)
                 Arrays.asList("one", "two", 3);
-        System.out.println(stringList);
-//        [one, two, 3]
-        System.out.println(stringList.getClass());
+        System.out.println(stringList); // [one, two, 3]
 //        java.util.Arrays$ArrayList at runtime
+        System.out.println(stringList.getClass());
+//        ClassCastException
+        String s = stringList.get(2);
     }
 
     public static void main(String[] args) {
