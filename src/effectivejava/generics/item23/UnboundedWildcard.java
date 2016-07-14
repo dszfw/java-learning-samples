@@ -9,7 +9,7 @@ public class UnboundedWildcard {
         List<String> stringList = new ArrayList<>();
         stringList.add("ssss");
 
-        List<?> unboundedWildcardList = Arrays.asList("one", "two");
+        List<?> unboundedWildcardList = new ArrayList<>(Arrays.asList("one", "two"));
         // we can't add any element to unboundedWildcardList except null
 //         unboundedWildcardList.add("sss");
         // unboundedWildcardList.add(123);
