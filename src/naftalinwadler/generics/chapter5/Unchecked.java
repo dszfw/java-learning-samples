@@ -1,16 +1,34 @@
 package naftalinwadler.generics.chapter5;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Unchecked {
-//    @SuppressWarnings("unchecked")
-    public static void main(String[] args) {
+    public static void uncheckedCall() {
         List raw = new ArrayList<String>();
         Object o = raw.get(0);
-        // unchecked
+        // unchecked call
         raw.add("123");
-        // unchecked
+    }
+
+    public static void uncheckedAssignment() {
+        List raw = new ArrayList<String>();
+        // unchecked assignment
         List<String> parametrized = raw;
+    }
+
+    public static void uncheckedCasting() {
+        // unchecked cast
+        List<String> stringList = (List<String>)(List<?>)
+                Arrays.asList("one", "two", 3);
+        System.out.println(stringList);
+//        [one, two, 3]
+        System.out.println(stringList.getClass());
+//        java.util.Arrays$ArrayList at runtime
+    }
+
+    public static void main(String[] args) {
+        uncheckedCasting();
     }
 }

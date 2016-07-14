@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-public class Reifiable {
+public class GenericsNotReifiable {
     public static void main(String[] args) {
         List<?> unbounded = new ArrayList<>();
         List<String> list = new ArrayList<>();
@@ -15,7 +15,7 @@ public class Reifiable {
         System.out.println(bounded.getClass());
 
         System.out.println(unbounded instanceof List<?>);
-        // illegal
+        // instance testing illegal
 //        System.out.println(list instanceof List<String>);
 //        System.out.println(bounded instanceof List<? super String>);
     }
