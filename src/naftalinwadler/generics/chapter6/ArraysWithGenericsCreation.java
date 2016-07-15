@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.function.IntBinaryOperator;
 
-public class ArraysWithGenericsCreating {
+public class ArraysWithGenericsCreation {
     /*public static <T> T[] createArrWithTypeParameter() {
         // illegal
         return new T[10];
