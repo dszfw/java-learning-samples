@@ -9,7 +9,7 @@ public class Unchecked {
         List raw = new ArrayList<String>();
         Object o = raw.get(0);
         // unchecked call
-        raw.add("123");
+        raw.add(42);
     }
 
     public static void uncheckedAssignment() {
@@ -18,7 +18,7 @@ public class Unchecked {
         List<String> parametrized = raw;
     }
 
-    public static void uncheckedCasting() {
+    public static void uncheckedGenericCasting() {
         // unchecked cast
         List<String> stringList = (List<String>)(List<?>)
                 Arrays.asList("one", "two", 3);
@@ -29,7 +29,7 @@ public class Unchecked {
         String s = stringList.get(2);
     }
 
-    public static void main(String[] args) {
-        uncheckedCasting();
+    public static void classCastExceptionCasting() {
+        String s = (String)(Object) 42;
     }
 }
