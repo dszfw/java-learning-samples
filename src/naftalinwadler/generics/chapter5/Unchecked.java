@@ -18,7 +18,16 @@ public class Unchecked {
         List<String> parametrized = raw;
     }
 
-    public static void uncheckedGenericCasting() {
+    @SuppressWarnings("unchecked")
+    public static <T> T uncheckedGenericCasting(Object o, Class<T> type) {
+        if (!type.isInstance(o)) {
+            throw new ClassCastException();
+        }
+        // unchecked casting
+        return (T) o;
+    }
+
+    public static void uncheckedGenericCollectionsCasting() {
         // unchecked cast
         List<String> stringList = (List<String>)(List<?>)
                 Arrays.asList("one", "two", 3);
