@@ -1,22 +1,26 @@
 package naftalinwadler.generics.chapter2;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-/*
+/**
 The Get and Put Principle: use an extends wildcard when you only get values out of a
 structure, use a super wildcard when you only put values into a structure, and don’t use
 a wildcard when you both get and put.
- */
+
+You might think List<? extends Parent> is "a list of things that extends Parent", but that's not actually what it means. It means "there exists some type C, such that C extends Parent, and this is a List of that C." Since we don't know what that C is, we don't know that a Parent is-a C, so you can't put a Parent in a List<C>. (C here is called a capture type.) But, you can take one out, because you get C out of the List, and C is-a Parent, so that's good.
+
+ **/
 public class BoundedWildcards {
     static void extendsUsage() {
-        List<? extends Number> numbers = Arrays.<Double>asList(3.14, 2.718);
+        List<? extends Number> numbers = Arrays.<Integer>asList(3, 42);
 
         // subtyping
         numbers = new ArrayList<Double>();
 
-        // can't compile
+        // won't compile
 //        numbers.add(42);
         // only null is allowed
         numbers.add(null);
@@ -27,7 +31,12 @@ public class BoundedWildcards {
     }
 
     static void superUsage() {
-        List<? super Number> list = Arrays.asList(42, 2.718);
+        // Object type will be inferred
+        List<? super Number> list = Arrays.asList(42, 2.718, new Object());
+        // the above statement the same as below
+//        List<? super Number> list = Arrays.<Object>asList(42, 2.718, new Object());
+        // won't compile
+//        List<? super Number> list = Arrays.<Number>asList(42, 2.718, new Object());
 
         // supertyping
         list = new ArrayList<Object>();
@@ -58,8 +67,9 @@ public class BoundedWildcards {
             }
         });
         list.add(null);
-        // can't compile
+        // won't compile
 //        list.add(new Object());
+//        list.add(new Serializable(){});
 
         Object obj = list.get(0);
     }
