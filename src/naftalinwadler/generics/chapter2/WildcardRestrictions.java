@@ -8,7 +8,9 @@ public class WildcardRestrictions {
 
     public static void main(String[] args) {
         List<Integer> integers = Arrays.asList(1, 2, 3);
-//        WildcardRestrictions.<? extends Number>genericMethodCallWithExplicitParameter(integers);
+        // "Unexpected wildcard" compile error
+//        WildcardRestrictions.<? extends Number>genericMethodCallWithExplicitParameter();
+        List<?> objs = WildcardRestrictions.<Integer>genericMethodCallWithExplicitParameter();
 
         // can't compile
 //        WildcardRestrictions.<?>genericMethodCallWithExplicitParameter();
@@ -31,7 +33,9 @@ public class WildcardRestrictions {
 
 // Supertypes restrictions
 
+// "No wildcard expected" compile error
 //class A extends ArrayList<? extends Number> {}
 class A extends ArrayList<List<? extends Number>> {}
 
+// "No wildcard expected" compile error
 //abstract class B implements List<?> {}
